@@ -70,7 +70,7 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
         sx={{ borderRadius: 0 }}
         className={'search-input'}
         aria-label="搜索文件"
-        placeholder={formatWithShortcut(`Search files`, focusSearchInputShortcut)}
+        placeholder={formatWithShortcut(`搜索文件`, focusSearchInputShortcut)}
         onChange={({ target: { value } }) => onSearch(value, searchMode)}
         value={value}
         trailingAction={
