@@ -24,8 +24,8 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
 
   const toggleButtonDescription =
     searchMode === 'regex'
-      ? 'Match file name with regular expression.'
-      : `Match file path sequence with plain input.`
+      ? '使用正则表达式匹配文件名。'
+      : `使用纯输入匹配文件路径序列。`
 
   const isInputValid = useMemo(
     () =>
@@ -42,9 +42,9 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
 
   const tooltipText = value
     ? !isInputValid
-      ? 'Invalid regular expression.'
+      ? '无效正则表达式'
       : !isSupportedRegex
-      ? `Highlight is not supported for regular expression containing '?:', '?=', '?!', '?<=', or '?<!.'`
+      ? `不支持高亮显示包含以下内容的正则表达式： '?:', '?=', '?!', '?<=', 或 '?<!.'`
       : null
     : null
 
@@ -69,7 +69,7 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
         block
         sx={{ borderRadius: 0 }}
         className={'search-input'}
-        aria-label="Search files"
+        aria-label="搜索文件"
         placeholder={formatWithShortcut(`Search files`, focusSearchInputShortcut)}
         onChange={({ target: { value } }) => onSearch(value, searchMode)}
         value={value}
@@ -79,7 +79,7 @@ export function SearchBar({ onSearch, onFocus, value }: Props) {
               disabled={!value}
               onClick={() => onSearch('', searchMode)}
               icon={XIcon}
-              aria-label="Clear"
+              aria-label="清除"
             />
             <TextInput.Action
               aria-label={toggleButtonDescription}

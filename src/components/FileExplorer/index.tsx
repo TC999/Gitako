@@ -64,9 +64,9 @@ export function FileExplorer() {
       {run(() => {
         switch (state) {
           case 'tree-loading':
-            return <LoadingIndicator text={'Fetching File List...'} />
+            return <LoadingIndicator text={'获取文件列表...'} />
           case 'tree-rendering':
-            return <LoadingIndicator text={'Rendering File List...'} />
+            return <LoadingIndicator text={'渲染文件列表...'} />
           case 'tree-rendered':
             return (
               metaData &&
@@ -201,7 +201,7 @@ function LoadedFileExplorer({
       {visibleNodesGenerator?.defer && (
         <div className={'status'}>
           <Label
-            title="This repository is large. Gitako has switched to Lazy Mode to improve performance. Folders will be loaded on demand."
+            title="该仓库很大。为提高性能，Gitako 已改用极简模式。文件夹将按需加载。"
             className={'lazy-mode'}
             variant="attention"
           >
@@ -213,11 +213,11 @@ function LoadedFileExplorer({
       {searched && visibleNodes.nodes.length === 0 && (
         <>
           <Text marginTop={6} textAlign="center" color="text.gray">
-            No results found.
+            无搜索结果。
           </Text>
           {visibleNodesGenerator?.defer && (
             <Text textAlign="center" color="gray.4" fontSize="12px">
-              Search results are limited to loaded folders in Lazy Mode.
+              在极简模式下，搜索结果仅限于已加载的文件夹。
             </Text>
           )}
         </>

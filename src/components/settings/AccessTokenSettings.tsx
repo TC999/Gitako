@@ -34,9 +34,9 @@ export function AccessTokenSettings() {
       hint: typeof useAccessTokenHint.value = (
         <span>
           <a href="#" onClick={() => window.location.reload()}>
-            Reload
+            重载
           </a>{' '}
-          to activate!
+          激活!
         </span>
       ),
     ) => {
@@ -53,10 +53,10 @@ export function AccessTokenSettings() {
     <SettingsSection
       title={
         <>
-          Access Token{' '}
+          访问令牌{' '}
           <a
             href={wikiLinks.createAccessToken}
-            title="A token is required to access private repositories or bypass API rate limits"
+            title="需要令牌才能访问私有仓库或绕过 API 速率限制"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ export function AccessTokenSettings() {
       {sidebarState === 'getting-access-token' ? (
         <Box display="inline-flex" alignItems="center" sx={{ gap: 2 }}>
           <Spinner size="small" />
-          <Text>Getting access token</Text>
+          <Text>获取令牌</Text>
         </Box>
       ) : hasAccessToken ? (
         <IIFC>
@@ -90,7 +90,7 @@ export function AccessTokenSettings() {
 
                       return (
                         <Box>
-                          <Text as="p">Are you sure to clear the token?</Text>
+                          <Text as="p">您确定清除令牌？</Text>
                           <Box display="inline-flex" sx={{ gap: 2 }}>
                             <Button
                               variant="danger"
@@ -99,7 +99,7 @@ export function AccessTokenSettings() {
                             >
                               {countDown ? `Confirm (${countDown}s)` : `Confirm`}
                             </Button>
-                            <Button onClick={() => setShowConfirmButton(false)}>Cancel</Button>
+                            <Button onClick={() => setShowConfirmButton(false)}>取消</Button>
                           </Box>
                         </Box>
                       )
@@ -107,8 +107,8 @@ export function AccessTokenSettings() {
                   </IIFC>
                 ) : (
                   <Box>
-                    <Text as="p">Your token has been saved.</Text>
-                    <Button onClick={() => setShowConfirmButton(true)}>Clear</Button>
+                    <Text as="p">您的令牌已保存。</Text>
+                    <Button onClick={() => setShowConfirmButton(true)}>清除</Button>
                   </Box>
                 )}
               </Box>
@@ -119,10 +119,10 @@ export function AccessTokenSettings() {
         <div>
           {platform === Gitea ? (
             // TODO
-            <Text>Note: OAuth for Gitea is unavailable</Text>
+            <Text>注：Gitea 的 OAuth 不可用</Text>
           ) : platform === Gitee ? (
             // disabled for Gitee as it does not support dynamic redirect_uri
-            <Text>Note: OAuth for Gitee is unavailable</Text>
+            <Text>注：Gitee 的 OAuth 不可用</Text>
           ) : (
             <a
               className={'link-button'}
@@ -135,7 +135,7 @@ export function AccessTokenSettings() {
                 window.location.href = platform.getOAuthLink()
               }}
             >
-              Create with OAuth (recommended)
+              使用 OAuth (推荐)
             </a>
           )}
           <div className={'access-token-input-control'}>
@@ -149,7 +149,7 @@ export function AccessTokenSettings() {
               onChange={({ currentTarget: { value } }) => {
                 setAccessTokenInputValue(value)
                 useAccessTokenHint.onChange(
-                  ACCESS_TOKEN_REGEXP.test(value) ? '' : 'Gitako does not recognize the token.',
+                  ACCESS_TOKEN_REGEXP.test(value) ? '' : 'Gitako 无法识别该令牌。',
                 )
               }}
               onKeyPress={({ key }) => {

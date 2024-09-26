@@ -87,7 +87,7 @@ export function ToggleShowButton({ className, onClick, onHover }: Props) {
             sx={{ ml: 1 }}
             variant="danger"
             size="small"
-            aria-label={'Reload Gitako'}
+            aria-label={'重载 Gitako'}
             icon={SyncIcon}
             onClick={reload}
           />

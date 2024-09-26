@@ -82,7 +82,7 @@ function NodeContextMenu({
         }
         return (
           <ActionList.Item {...getTriggerProps(onTrigger)}>
-            Copy permalink
+            复制永久链接
             {copyState.value && copied === mark ? (
               <ActionList.TrailingVisual>
                 <CheckIcon />
@@ -104,7 +104,7 @@ function NodeContextMenu({
         }
         return (
           <ActionList.Item {...getTriggerProps(onTrigger)}>
-            Copy link
+            复制链接
             {copyState.value && copied === mark ? (
               <ActionList.TrailingVisual>
                 <CheckIcon />
@@ -122,7 +122,7 @@ function NodeContextMenu({
       }
       return (
         <ActionList.Item {...getTriggerProps(onTrigger)}>
-          Copy relative path
+          复制相对路径
           {copyState.value && copied === mark ? (
             <ActionList.TrailingVisual>
               <CheckIcon />
@@ -141,7 +141,7 @@ function NodeContextMenu({
         rel="noopener noreferrer"
         onClick={() => setIsOpen(false)}
       >
-        Open raw content
+        打开原始内容
         <ActionList.TrailingVisual>
           <CrossReferenceIcon />
         </ActionList.TrailingVisual>
@@ -158,7 +158,7 @@ function NodeContextMenu({
         {...platform.delegateFastRedirectAnchorProps?.({ node })}
         onClick={() => setIsOpen(false)}
       >
-        Go to directory
+        打开文件夹
       </ActionList.LinkItem>
     ),
     toggleFolderRecursively:
@@ -175,7 +175,7 @@ function NodeContextMenu({
             href={node.url}
             rel="noopener noreferrer"
           >
-            Toggle folder recursively
+            递归切换文件夹
           </ActionList.LinkItem>
         )
       })(),
@@ -186,7 +186,7 @@ function NodeContextMenu({
       renderAnchor={anchorProps => (
         <button
           {...anchorProps}
-          aria-label={`More actions`}
+          aria-label={`更多操作`}
           className={cx('context-menu', anchorProps.className, { active: isOpen })}
         >
           <Icon IconComponent={KebabHorizontalIcon} />
@@ -246,7 +246,7 @@ export function useRenderFindInFolderButton(
         ? function renderFindInFolderButton(node: TreeNode) {
             return node.type === 'tree' ? (
               <button
-                title={'Find in folder...'}
+                title={'在文件夹中查找...'}
                 className={'find-in-folder-button'}
                 onClick={() => onSearch(node.path + '/', searchMode)}
               >
@@ -266,7 +266,7 @@ export function useRenderGoToButton(searched: boolean, goTo: (path: string[]) =>
         ? function renderGoToButton(node: TreeNode): React.ReactNode {
             return (
               <button
-                title={'Reveal in file tree (⏎)'}
+                title={'在文件树中显示 (⏎)'}
                 className={'go-to-button'}
                 onClick={() => goTo(node.path.split('/'))}
               >

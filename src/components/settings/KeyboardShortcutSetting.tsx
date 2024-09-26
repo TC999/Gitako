@@ -26,7 +26,7 @@ export function KeyboardShortcutSetting({ label, value, onChange }: Props) {
           sx={{ marginRight: 1, flex: 1 }}
           onFocus={() => $focused.onChange(true)}
           onBlur={() => $focused.onChange(false)}
-          placeholder={$focused.value ? 'Press key combination' : 'Click here to set'}
+          placeholder={$focused.value ? '按下组合键' : '点击此处设置'}
           value={friendlyFormatShortcut($shortcut.value)}
           onChange={noop}
           onKeyDown={e => {
@@ -50,7 +50,7 @@ export function KeyboardShortcutSetting({ label, value, onChange }: Props) {
           onClick={() => onChange(value === $shortcut.value ? undefined : $shortcut.value)}
         >
           {/* Show clear when shortcut equal to input value */}
-          {value === $shortcut.value ? 'Clear' : 'Save'}
+          {value === $shortcut.value ? '清除' : '保存'}
         </Button>
       </Box>
     </FormControl>

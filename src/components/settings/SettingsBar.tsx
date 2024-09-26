@@ -31,15 +31,15 @@ const moreFields: SimpleConfigField<'copySnippetButton' | 'codeFolding' | 'pjaxM
     ? [
         {
           key: 'codeFolding',
-          label: 'Fold source code button',
+          label: '折叠源代码按钮',
           wikiLink: wikiLinks.codeFolding,
-          tooltip: `Read more in Gitako's Wiki`,
+          tooltip: `在 Gitako Wiki 中阅读更多信息`,
         },
         {
           key: 'pjaxMode',
-          label: 'Native PJAX mode',
+          label: '原生 PJAX 模式',
           wikiLink: wikiLinks.pjaxMode,
-          tooltip: 'Please keep it enabled unless Gitako crashes after redirecting',
+          tooltip: '请保持启用状态，除非 Gitako 在重定向后崩溃',
           overwrite: {
             value: pjaxMode => pjaxMode === 'native',
             onChange: checked => (checked ? 'native' : 'pjax-api'),
@@ -47,9 +47,9 @@ const moreFields: SimpleConfigField<'copySnippetButton' | 'codeFolding' | 'pjaxM
         },
         {
           key: 'copySnippetButton',
-          label: 'Copy snippet button',
+          label: '复制片段按钮',
           wikiLink: wikiLinks.copySnippet,
-          tooltip: `Read more in Gitako's Wiki`,
+          tooltip: `在 Gitako Wiki 中阅读更多信息`,
         },
       ]
     : []
@@ -67,7 +67,7 @@ export function SettingsBarContent({ toggleShow }: { toggleShow: () => void }) {
       <div className={'gitako-settings-bar-header'}>
         <h2 className={'gitako-settings-bar-title'}>Settings</h2>
         <RoundIconButton
-          aria-label="Close settings"
+          aria-label="关闭设置"
           onClick={toggleShow}
           size="medium"
           iconSize={20}
@@ -81,7 +81,7 @@ export function SettingsBarContent({ toggleShow }: { toggleShow: () => void }) {
         <SidebarSettings />
         <FileTreeSettings />
         {moreFields.length > 0 && (
-          <SettingsSection title={'More'}>
+          <SettingsSection title={'更多'}>
             {moreFields.map(field => (
               <React.Fragment key={field.key}>
                 <SimpleConfigFieldCheckbox field={field} />
@@ -91,14 +91,14 @@ export function SettingsBarContent({ toggleShow }: { toggleShow: () => void }) {
             {reloadHint && <div className={'hint'}>{reloadHint}</div>}
           </SettingsSection>
         )}
-        <SettingsSection title={'Talk to the author'}>
+        <SettingsSection title={'联系作者'}>
           <div>
             <a
               href="https://github.com/EnixCoda/Gitako/issues"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Report bug
+              报告 BUG 
             </a>
             {' / '}
             <a
@@ -106,7 +106,7 @@ export function SettingsBarContent({ toggleShow }: { toggleShow: () => void }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Discuss feature
+              讨论功能
             </a>
           </div>
         </SettingsSection>

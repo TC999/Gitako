@@ -19,14 +19,14 @@ export function Footer(props: Props) {
         <Link
           className={'version'}
           href={wikiLinks.changeLog}
-          title={'Gitako changelog'}
+          title={'Gitako 更改日志'}
           target="_blank"
           rel="noopener noreferrer"
         >
           {VERSION}
         </Link>
         <Link
-          title="About to say good bye."
+          title="就要说再见了。"
           href={wikiLinks.bye}
           target="_blank"
           rel="noopener noreferrer"
@@ -36,13 +36,13 @@ export function Footer(props: Props) {
       </div>
       <div>
         <RoundIconButton
-          aria-label={'Reload'}
+          aria-label={'重载'}
           icon={SyncIcon}
           iconColor="fg.muted"
           onClick={() => reload()}
         />
         <RoundIconButton
-          aria-label={'Settings'}
+          aria-label={'设置'}
           icon={GearIcon}
           iconColor="fg.muted"
           onClick={toggleShowSettings}

@@ -10,29 +10,25 @@ export function AccessDeniedDescription() {
 
   return (
     <div className={'description-area'}>
-      <h2>Access Denied</h2>
+      <h2>拒绝访问</h2>
       {hasToken ? (
         <>
           <p>
-            Current access token is either invalid or not granted with permissions to access this
-            project.
+            当前访问令牌无效或未授予访问该项目的权限。
           </p>
           {platform === GitHub && (
             <p>
-              You can grant or request access{' '}
-              <a
-                href={`https://github.com/settings/connections/applications/${GITHUB_OAUTH.clientId}`}
-              >
-                here
-              </a>{' '}
-              if you setup Gitako with OAuth. Or try clear and set token again.
+              如果您使用 OAuth 设置 Gitako，可以在
+              <a href={`https://github.com/settings/connections/applications/${GITHUB_OAUTH.clientId}`}>
+              这里
+              </a>
+              授予或请求访问权限, 或者尝试清除并重新设置令牌。
             </p>
           )}
         </>
       ) : (
         <p>
-          Gitako needs access token to read this project. Please setup access token in the settings
-          panel below.
+          Gitako 需要访问令牌才能读取此项目。请在下面的设置面板中设置访问令牌。
         </p>
       )}
     </div>

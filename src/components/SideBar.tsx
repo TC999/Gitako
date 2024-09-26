@@ -99,7 +99,7 @@ export function SideBar() {
                     {sidebarToggleMode === 'persistent' && (
                       <RoundIconButton
                         icon={TabIcon}
-                        aria-label={formatWithShortcut('Collapse sidebar', shortcut)}
+                        aria-label={formatWithShortcut('收起', shortcut)}
                         sx={{
                           transform: 'rotateY(180deg)',
                         }}
@@ -109,7 +109,7 @@ export function SideBar() {
                     {platformName !== 'Gitee' && (
                       <RoundIconButton
                         icon={PinIcon}
-                        aria-label={'Toggle sidebar dock mode between float and persistent'}
+                        aria-label={'固定'}
                         iconColor={sidebarToggleMode === 'persistent' ? 'fg.default' : undefined}
                         sx={{
                           transform: 'rotateY(180deg)',
@@ -129,10 +129,10 @@ export function SideBar() {
                   {() => {
                     switch (useLoadedContext(SideBarStateContext).value) {
                       case 'getting-access-token':
-                        return <LoadingIndicator text={'Getting access token...'} />
+                        return <LoadingIndicator text={'获取令牌...'} />
                       case 'after-getting-access-token':
                       case 'meta-loading':
-                        return <LoadingIndicator text={'Fetching repo meta...'} />
+                        return <LoadingIndicator text={'获取仓库元数据...'} />
                       case 'error-due-to-auth':
                         return <AccessDeniedDescription />
                       case 'meta-loaded':
