@@ -4,47 +4,47 @@
   <img width="192" src="src/assets/icons/Gitako.png" />
 </p>
 
-Gitako is a free file tree extension for GitHub, available on Chrome, Firefox and Edge.
+Gitako 是一个免费的 GitHub 文件树扩展程序，可在 Chrome、Firefox 和 Edge 上使用。
 
-### Features
+### 特性
 
-- 📂 File tree for repository and pull request
-- 🔎 Instant file search and navigation
-- 🕶️ Support private repositories
-- 🧩 Support [GitHub enterprise](https://github.com/EnixCoda/Gitako/wiki/Use-in-GitHub-enterprise-and-other-sites), Gitea, Gitee, and [more](https://github.com/EnixCoda/Gitako/issues/60)
-- 🏎 Always performant, even in gigantic projects
-- ⌨️ Intuitive keyboard navigation
-- 📋 Copy snippets and file content
-- 🎨 Various icons and official themes support
-- 🗂 Support git submodule
-- 📏 Fold source code
+- 📂 仓库和拉取请求的文件树
+- 🔎 即时文件搜索和导航
+- 🕶️ 支持私有仓库
+- 🧩 支持 [GitHub 企业版](https://github.com/EnixCoda/Gitako/wiki/Use-in-GitHub-enterprise-and-other-sites)、Gitea、Gitee，以及 [更多](https://github.com/EnixCoda/Gitako/issues/60)
+- 🏎 始终性能卓越，即使在庞大的项目中也是如此
+- ⌨️ 直观的键盘导航
+- 📋 复制代码片段和文件内容
+- 🎨 支持各种图标和官方主题
+- 🗂 支持 Git 子模块
+- 📏 折叠源代码
 
-### Install
+### 安装
 
-<a href="https://chrome.google.com/webstore/detail/gitako-github-file-tree/giljefjcheohhamkjphiebfjnlphnokk"><img width="64" alt="Chrome" src="./assets/Chrome.svg" /></a>
-<a href="https://microsoftedge.microsoft.com/addons/detail/alpoloddcggjhakjemghahlkofjekbca"><img width="64" alt="Edge" src="./assets/Edge.svg" /></a>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/gitako-github-file-tree/"><img width="64" alt="Firefox" src="./assets/Firefox.svg" /></a>
+<a href="https://chrome.google.com/webstore/detail/gitako-github-file-tree/giljefjcheohhamkjphiebfjnlphnokk"><img  width="64" alt="Chrome" src="./assets/Chrome.svg" /></a>
+<a href="https://microsoftedge.microsoft.com/addons/detail/alpoloddcggjhakjemghahlkofjekbca"><img  width="64" alt="Edge" src="./assets/Edge.svg" /></a>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/gitako-github-file-tree/"><img  width="64" alt="Firefox" src="./assets/Firefox.svg" /></a>
 
-It is more recommended for Edge users to install from Chrome store. It may delay for weeks before updates got published to Edge store because its review process is slow.
+对于 Edge 用户，更推荐从 Chrome 商店安装。因为 Edge 商店的审核过程较慢，更新可能需要数周时间才能发布。
 
-### Help Gitako
+### 帮助 Gitako
 
-Gitako is **FREE**. If you like it, please
+Gitako 是 **免费的**。如果您喜欢它，请：
 
-- ⭐️ Star it at GitHub
-- 👍 Review in the extension store
+- ⭐️ 在 GitHub 上给它星标
+- 👍 在扩展商店中评价
 
-[Feature discussions](https://github.com/EnixCoda/Gitako/discussions) and [bug reports](https://github.com/EnixCoda/Gitako/issues/) are also welcome!
+[特性讨论](https://github.com/EnixCoda/Gitako/discussions) 和 [错误报告](https://github.com/EnixCoda/Gitako/issues/) 也非常欢迎！
 
-Check out [contributing.md](./contributing.md) if you want to contribute to Gitako directly.
+如果您想直接为 Gitako 做出贡献，请查看 [contributing.md](./contributing.md)。
 
-### About
+### 关于
 
-#### Source of the name and logo?
+#### 名字和标志的来源？
 
-The totem of GitHub is a cute octopus. And octopus in Japanese is `タコ`(tako).
-Then concat them together:
+GitHub 的图腾是一只可爱的章鱼。而章鱼在日语中的发音是 `タコ`(tako)。
+然后将它们组合在一起：
 
     git + tako -> gitako
 
-The logo of Gitako is a tentacle of octopus, indicates that Gitako works like a part of GitHub.
+Gitako 的标志是章鱼的触手，表示 Gitako 像 GitHub 的一部分一样工作。

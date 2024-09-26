@@ -1,78 +1,78 @@
-# Contributing
+# 贡献
 
-Thank you if you are trying to contribute!
+如果您正在尝试贡献，非常感谢！
 
-Note: if you were using Windows, you may need to find alternatives for `make` commands. Or use WSL. I've not tested development on Windows and do not guarantee if it would work.
+注意：如果您使用的是Windows，您可能需要为`make`命令寻找替代方案。或者使用WSL。我没有在Windows上测试过开发，不能保证它是否有效。
 
-## Set up development env
+## 设置开发环境
 
-1. Clone the repo
-1. Run `make pull-icons` to install dependencies
-1. Run `yarn` to install dependencies
-1. Run `yarn dev` to start the development server, you'll see a `dist` folder appear in the root of this project
-1. Open the extensions page in Chrome, enable developer mode, and load the extension from the `dist` folder
-1. Navigate to repository of your choice and you should see the extension appear
+1. 克隆仓库
+2. 运行`make pull-icons`来安装依赖
+3. 运行`yarn`来安装依赖
+4. 运行`yarn dev`启动开发服务器，您将在项目的根目录下看到一个`dist`文件夹
+5. 打开Chrome的扩展页面，启用开发者模式，并从`dist`文件夹加载扩展
+6. 导航到您选择的仓库，您应该能看到扩展出现
 
-When you modify source code, you need to do either of below to apply your changes:
+当您修改源代码时，您需要做以下任一操作来应用您的更改：
 
-- (recommended) use [the Extension Reloader extension](https://chrome.google.com/webstore/detail/fimgfedafeadlieiabdeeaodndnlbhid). It could reload all extensions then refresh the page (you need to enable it in its settings).
-- manually reload the extension in the `chrome://extensions` and then refresh your repository page
+- （推荐）使用[Extension Reloader扩展](https://chrome.google.com/webstore/detail/fimgfedafeadlieiabdeeaodndnlbhid)。它可以重新加载所有扩展然后刷新页面（您需要在其设置中启用它）。
+- 手动在`chrome://extensions`中重新加载扩展，然后刷新您的仓库页面
 
-## Develop with other browsers
+## 在其他浏览器中开发
 
-Gitako supports Chrome, Edge, Firefox, and Safari. You can develop with other browsers by following the instructions below.
+Gitako支持Chrome、Edge、Firefox和Safari。您可以通过遵循以下说明在其他浏览器中开发。
 
-### Edge:
+### Edge：
 
-1. Finish the steps in "Set up development env" to `yarn dev`
-1. Open the extensions page in Edge, enable developer mode, and load the extension from the `dist` folder
-1. Navigate to repository of your choice and you should see the extension appear
+1. 完成“设置开发环境”中的步骤到`yarn dev`
+2. 打开Edge的扩展页面，启用开发者模式，并从`dist`文件夹加载扩展
+3. 导航到您选择的仓库，您应该能看到扩展出现
 
-### Firefox:
+### Firefox：
 
-1. run `yarn dev`
-   this will build Gitako with special Firefox configurations
-1. run `yarn debug-firefox`
-   a new instance of Firefox will open with Gitako automatically installed
-1. navigate to a GitHub repo and you should see the extension appear
-   if not, click the extension icon in the toolbar and enable Gitako in its submenu
-1. when you modify source, better refresh the tab
+1. 运行`yarn dev`
+   这将使用特殊的Firefox配置构建Gitako
+2. 运行`yarn debug-firefox`
+   一个新的Firefox实例将打开，Gitako自动安装
+3. 导航到GitHub仓库，您应该能看到扩展出现
+   如果没有，请单击工具栏中的扩展图标并在其子菜单中启用Gitako
+4. 当您修改源代码时，最好刷新标签页
 
-### Safari (macOS only):
+### Safari（仅限macOS）：
 
-1. run `yarn dev`
-1. Open `Safari/Gitako/Gitako.xcodeproj` in Xcode
-1. Click the "Run" button
-1. Enable developer mode in Safari's preferences
-1. Enable Gitako in Safari's preferences
-1. Open a Safari tab and visit a GitHub repo, then activate Gitako via Gitako icon next to the address bar
-1. when you modify source, click the "Run" button in Xcode and refresh the tab
+1. 运行`yarn dev`
+2. 在Xcode中打开`Safari/Gitako/Gitako.xcodeproj`
+3. 单击“运行”按钮
+4. 在Safari的首选项中启用开发者模式
+5. 在Safari的首选项中启用Gitako
+6. 打开Safari标签页，访问GitHub仓库，然后通过地址栏旁边的Gitako图标激活Gitako
+7. 当您修改源代码时，单击Xcode中的“运行”按钮并刷新标签页
 
-## Build for production
+## 为生产构建
 
-Run `make release` to build and release the extension
+运行`make release`来构建和发布扩展
 
 ```mermaid
 graph LR
-    source[Source Code] --> yarn-build[$ yarn build] --> dir-dist
+    source[源代码] --> yarn-build[$ yarn build] --> dir-dist
     yarn-build --> dir-dist-firefox
     yarn-build --> dir-dist-safari
 
-    subgraph FileSystem
+    subgraph 文件系统
       direction TB
       dir-dist[./dist]
       dir-dist-firefox[./dist-firefox]
       dir-dist-safari[./Safari/Gitako/Gitako Extension/Resources]
     end
 
-    dir-dist -- source maps --> sentry[Sentry]
-    dir-dist -- "exclude source maps" --> artifact[Gitako-$version.zip] --> release-target[Chrome Web Store]
-    artifact --> release-target-edge[Edge Add-ons]
+    dir-dist -- 源映射 --> sentry[Sentry]
+    dir-dist -- "排除源映射" --> artifact[Gitako-$version.zip] --> release-target[Chrome网上应用店]
+    artifact --> release-target-edge[Edge插件]
 
-    dir-dist-firefox -- "exclude source maps" --> artifact-firefox[Gitako-$version-firefox.zip] --> release-target-firefox[Firefox Add-ons]
-    FileSystem -- source files --> artifact-source-firefox[Gitako-$version-source.zip] --> release-target-firefox[Firefox Add-ons]
+    dir-dist-firefox -- "排除源映射" --> artifact-firefox[Gitako-$version-firefox.zip] --> release-target-firefox[Firefox插件]
+    文件系统 -- 源文件 --> artifact-source-firefox[Gitako-$version-source.zip] --> release-target-firefox[Firefox插件]
 
-    dir-dist-safari --> xcode[Xcode Build] --> release-target-safari[App Store]
+    dir-dist-safari --> xcode[Xcode构建] --> release-target-safari[应用商店]
 
     classDef release fill:#9ef
     class sentry,release-target,release-target-edge,release-target-firefox,release-target-safari release
