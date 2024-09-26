@@ -128,7 +128,7 @@ export function AccessTokenSettings() {
               className={'link-button'}
               onClick={() => {
                 if (platform.isEnterprise()) {
-                  alert(`OAuth for enterprise is not available.`)
+                  alert(`企业版 OAuth 不可用。`)
                   return
                 }
                 // use js here to make sure redirect_uri is latest url
@@ -143,7 +143,7 @@ export function AccessTokenSettings() {
               sx={{ marginRight: 1 }}
               className={'access-token-input'}
               value={accessTokenInputValue}
-              placeholder="Or input here manually"
+              placeholder="或者在此输入"
               onFocus={() => focusInput.onChange(true)}
               onBlur={() => focusInput.onChange(false)}
               onChange={({ currentTarget: { value } }) => {
@@ -157,7 +157,7 @@ export function AccessTokenSettings() {
               }}
             />
             <Button onClick={() => saveToken()} disabled={!accessTokenInputValue}>
-              Save
+              保存
             </Button>
           </div>
         </div>
