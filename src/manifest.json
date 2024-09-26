@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Gitako - GitHub file tree",
+  "name": "Gitako - GitHub 文件树",
   "icons": {
     "64": "icons/Gitako-64.png",
     "128": "icons/Gitako-128.png",
