@@ -14,12 +14,12 @@ export function useHandleNetworkError() {
     function handleNetworkError(err: Error) {
       const message = platform.mapErrorMessage?.(err) || err.message
       if (message === errors.EMPTY_PROJECT) {
-        changeErrorContext('This project seems to be empty.')
+        changeErrorContext('这个项目似乎是空的。')
         return
       }
 
       if (message === errors.BLOCKED_PROJECT) {
-        changeErrorContext('Access to the project is blocked.')
+        changeErrorContext('访问此项目被阻止。')
         return
       }
 
@@ -33,19 +33,19 @@ export function useHandleNetworkError() {
       }
 
       if (message === errors.CONNECTION_BLOCKED) {
-        if (accessToken) changeErrorContext(`Cannot connect to ${platformName}.`)
+        if (accessToken) changeErrorContext(`无法连接至 ${platformName}.`)
         else changeStateContext('error-due-to-auth')
 
         return
       }
 
       if (message === errors.SERVER_FAULT) {
-        changeErrorContext(`${platformName} server went down.`)
+        changeErrorContext(`${platformName} 服务器宕机。`)
         return
       }
 
       changeStateContext('disabled')
-      changeErrorContext('Something unexpected happened.')
+      changeErrorContext('意外发生了。')
       throw err
     },
     [accessToken, changeErrorContext, changeStateContext],

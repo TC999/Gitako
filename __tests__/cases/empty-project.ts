@@ -9,7 +9,7 @@ describe(`in Gitako project page`, () => {
     await sleep(5000)
 
     expect(await getTextContent(selectors.gitako.errorMessage)).toBe(
-      'This project seems to be empty.',
+      '这个项目似乎是空的。',
     )
   })
 })
