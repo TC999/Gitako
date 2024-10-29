@@ -2,11 +2,11 @@
   "name": "gitako",
   "version": "3.13.0",
   "description": "File tree for GitHub, and more than that.",
-  "repository": "https://github.com/EnixCoda/Gitako",
+  "repository": "https://github.com/TC999/Gitako-Chinese",
   "author": "EnixCoda",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/EnixCoda/Gitako",
+  "homepage": "https://github.com/TC999/Gitako-Chinese",
   "engines": {
     "node": ">=18"
   },

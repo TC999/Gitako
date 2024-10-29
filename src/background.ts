@@ -2,6 +2,6 @@ import 'webext-dynamic-content-scripts'
 import addPermissionToggle from 'webext-permission-toggle'
 
 addPermissionToggle({
-  title: 'Enable Gitako on this domain',
-  reloadOnSuccess: 'Refresh to activate Gitako?',
+  title: '在此域上启用 Gitako',
+  reloadOnSuccess: '重载以激活 Gitako？',
 })

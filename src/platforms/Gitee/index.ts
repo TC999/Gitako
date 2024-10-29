@@ -182,7 +182,7 @@ export const Gitee: Platform = {
   },
   mapErrorMessage: (error: Error) =>
     ({
-      ['Only signed in user is allowed to call APIs.']: errors.BAD_CREDENTIALS,
+      ['只有已登录的用户才能调用 API。']: errors.BAD_CREDENTIALS,
     }[error.message]),
 }
 
