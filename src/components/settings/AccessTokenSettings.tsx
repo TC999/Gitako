@@ -97,7 +97,7 @@ export function AccessTokenSettings() {
                               disabled={!allowClear}
                               onClick={() => configContext.onChange({ accessToken: '' })}
                             >
-                              {countDown ? `Confirm (${countDown}s)` : `Confirm`}
+                              {countDown ? `确定 (${countDown}秒)` : `确定`}
                             </Button>
                             <Button onClick={() => setShowConfirmButton(false)}>取消</Button>
                           </Box>
