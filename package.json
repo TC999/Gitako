@@ -97,7 +97,7 @@
     "typescript": "^5.5.3",
     "url-loader": "^1.1.2",
     "web-ext": "^7.11.0",
-    "webpack": "^5.91.0",
+    "webpack": "^5.94.0",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
     "webpack-dashboard": "^3.3.8"
